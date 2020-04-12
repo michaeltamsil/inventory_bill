@@ -1,0 +1,22 @@
+{
+  "stock": [
+    {
+      "id": 1,
+      "name": "Indomie",
+      "quantity": 23,
+      "price": 2222
+    },
+    {
+      "name": "",
+      "quantity": "",
+      "price": "",
+      "id": 2
+    },
+    {
+      "name": "wfwf",
+      "quantity": "1",
+      "price": "1",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Inventory</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Fluid jumbotron</h1>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal
+                    space of its parent.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="cardcollapse navbar-collapse" id="navbarSupportedContent" style="width: 18rem;">
+                    <div class="card-header">
+                        Inventory
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="/">Dashboard</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="/">Add Item</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="./list.html">Show Item</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm">
+                <form action="" id="simpanBarang">
+                    <!-- untuk input nama -->
+                    <div class="form-group">
+                        <label for="">Name : </label>
+                        <input type="text" class="form-control" id="name">
+                      </div>
+                      <!-- untuk input email -->
+                    <div class="form-group">
+                        <label for="">Quantity : </label>
+                        <input type="number" class="form-control" id="quantity">
+                      </div>
+                      <!-- untuk input alamat rumah -->
+                      <div class="form-group">
+                        <label for="">Price :</label>
+                        <input type="number" class="form-control" id="price">
+                      </div>
+                      <button type="button" id="simpan">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+                
+            </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+
+</html>
