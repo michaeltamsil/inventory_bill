@@ -1,16 +1,16 @@
 {
   "stock": [
     {
-      "name": "hgvhv",
-      "quantity": "2",
-      "price": "2",
-      "id": 1
+      "id": 1,
+      "name": "besok ",
+      "price": "2000",
+      "quantity": "2000"
     },
     {
-      "name": "",
-      "quantity": "",
-      "price": "",
-      "id": 2
+      "id": 2,
+      "name": "bleek",
+      "price": "10000000",
+      "quantity": "123412341234"
     }
   ]
 }

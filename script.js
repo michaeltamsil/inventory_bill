@@ -17,7 +17,7 @@ axios
                     <td>${quantity}</td>
                     <td>${price}</td>
                     <td>
-                    <button onclick="update(${id})" class="btn btn-outline-primary" > <i class="fa fa-pencil-square"></i> Change </button>
+					<button onclick="update(${id})" class="btn btn-outline-primary" > <i class="fa fa-pencil-square"></i> Change </button>
                     <button onclick="deleteData(${id})" class="btn btn-outline-danger"><i class="fa fa-ban"></i> Delete </button>
                     </td>
                 </tr>
@@ -55,21 +55,21 @@ document.getElementById("simpan").addEventListener("click", function (event) {
 		});
 });
 
-// const update = (id) => {
-// 	const stock = data.find((item) => {
-// 		return item.id === id;
-// 	});
-	
-// 	if (stock) {
-// 		const id = window.prompt("Id", stock.id);
-// 		const name = window.prompt("Name", stock.name);
-// 		const price = window.prompt("Price", stock.price);
-// 		const quantity = window.prompt("Quantity", stock.quantity);
-// 		axios.put(`http://localhost:3000/stock/${id}`, {
-// 			id,
-// 			name,
-// 			price,
-// 			quantity,
-// 		});
-// 	}
-// };
+function update(id){
+	const stock = data.find((item) => {
+		return item.id === id;
+	});
+
+	if (stock) {
+		const id = window.prompt("Id", stock.id);
+		const name = window.prompt("Name", stock.name);
+		const price = window.prompt("Price", stock.price);
+		const quantity = window.prompt("Quantity", stock.quantity);
+		axios.put(`http://localhost:3000/stock/${id}`, {
+			id,
+			name,
+			price,
+			quantity,
+		});
+	}
+};
