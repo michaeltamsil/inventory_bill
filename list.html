@@ -1,67 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<title>List</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>List</title>
-</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron jumbotron-fluid">
+				<div class="container">
+					<h1 class="display-4">Fluid jumbotron</h1>
+					<p class="lead">
+						This is a modified jumbotron that occupies the entire horizontal
+						space of its parent.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm">
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div
+						class="cardcollapse navbar-collapse"
+						id="navbarSupportedContent"
+						style="width: 18rem;"
+					>
+						<div class="card-header">
+							Inventory
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<a href="/">Dashboard</a>
+							</li>
+							<li class="list-group-item">
+								<a href="/">Add Item</a>
+							</li>
+							<li class="list-group-item">
+								<a href="./list.html">Show Item</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover table-bordered">
+						<thead>
+							<tr>
+								<th scope="col" id="no">No.</th>
+								<th scope="col" id="name">Name</th>
+								<th scope="col" id="quantity">Quantity</th>
+								<th scope="col" id="price">Price</th>
+								<th scope="col">ADD</th>
+							</tr>
+						</thead>
+						<tbody id="listBarang"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 
-<body>
-    <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Fluid jumbotron</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="cardcollapse navbar-collapse" id="navbarSupportedContent" style="width: 18rem;">
-                    <div class="card-header">
-                        Inventory
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a href="/">Dashboard</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="/">Add Item</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="./list.html">Show Item</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col" id="no">No.</th>
-                            <th scope="col" id="name">Name</th>
-                            <th scope="col" id="quantity">Quantity</th>
-                            <th scope="col" id="price">Price</th>
-                            <th scope="col">ADD</th>
-                        </tr>
-                    </thead>
-                        <tbody id="listBarang">
-                        </tbody>
-                </table>
-            </div>
-            
-            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-            <script src="index.js"></script>
-</body>
-
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="./script.js"></script>
+		<script>
+			const update = (id) => {
+				const stock = data.find((item) => {
+					return item.id === id;
+                });
+                
+				if (stock) {
+					const id = window.prompt("Id", stock.id);
+					const name = window.prompt("Name", stock.name);
+					const price = window.prompt("Price", stock.price);
+					const quantity = window.prompt("Quantity", stock.quantity);
+					axios.put(`http://localhost:3000/stock/${id}`, {
+						id,
+						name,
+						price,
+						quantity,
+					});
+				}
+			};
+		</script>
+	</body>
 </html>
